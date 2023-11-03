@@ -61,7 +61,6 @@ Function Name: update_extra_mass_on_body
 	- Example Call:
 		- update_extra_mass_on_body()
 --]]
-
 function update_extra_mass_on_body()
 	while true do
 			ExtraMassOnBody = ExtraMassOnBody + sim.waitForSignal('ChangeInMassOnBody')
@@ -81,7 +80,6 @@ Function Name: update_arm_has_pkg
 	- Example Call:
 		- update_arm_has_pkg()
 --]]
-
 function update_arm_has_pkg()
 	while true do
 			ArmHasPackage = sim.waitForSignal('ArmHasPackage')
@@ -118,7 +116,6 @@ Function Name: LQR
 	- Example Call:
 		- torques = lqr()
 --]]
-
 function lqr()
 	-- Calculate desired torque
 	local torques = {}
@@ -144,7 +141,6 @@ Function Name: update_states
 	- Example Call:
 		- update_states()
 --]]
-
 function update_states()
 	-- Fetch States
 	local body_abg = sim.getObjectOrientation(Body, -1)
@@ -183,7 +179,6 @@ Function Name: generate
 	- Example Call:
 		- generate()
 --]]
-
 function generate(torques)
 	-- Declare necessary variables
 	local torque = 0
@@ -228,7 +223,6 @@ Function Name: update_lqr_weights
 	- Example Call:
 		- update_lqr_weights()
 --]]
-
 function update_lqr_weights()
 
 	if ArmHasPackage==1 then

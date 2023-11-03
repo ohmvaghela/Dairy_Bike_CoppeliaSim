@@ -700,6 +700,7 @@ function get_path_point_list(destination)
 
     return new_path_point_list
 end
+
 --[[
 Function Name: update_control_state
 Input:
