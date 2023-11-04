@@ -59,11 +59,58 @@
     - update_lqr_weights depending on states
     - generate torque accordingly
 
+## SteeringMotor
+- Predictive algo params for forward and reverse
+    1. heading error constant
+    2. CorssTrack error constant
+    3. Soft error constant
+- Limits 
+    - max steering angle
+    - max steering angular val
+    - min strring angluar val
+
+- Main
+    - `Update` function
+        - Runs only when any destination is reached 
+    - `hybrid_controller` function
+        - Update desired angular speed and desired angle
 
 
+- `Update` function 
+    - `delete` function
+        - if desination is reached so delete currnet path
+    - `update_destination` function
+        - Update current denstination value for manuplator
+    - `update_path_state` function
+        - Create new path to be followed
+    
+- `hybrid_controller` function
+    - Depending on state of motion controller is selected
+    - Reason dynamics of each motion changes
+    - Contollers
+        1. Forward : `predictive_controller`
+        2. Reverse : `reverse_controller`
+        3. Slope : `slope_controller`
+        4. ForwardBrake : `forward_brake_controller`
+        5. ReverseBrake : `reverse_brake_controller`
+        6. Stop : `stop_controller`
 
-<h2> SteeringMotor.lua : Stanley Predictive Controller  </h2>
-<h2> ReactionWheelMotor.lua : LQR controller </h2>
-<h2> MTB_Axis1.lua : LQR controller  </h2>
-<h2> MTB_PickLink.lua : LQR controller  </h2>
+- `predictive_controller` function
+    - from current state steering angle and velocity are found 
+    - next 5 predictions are found
+    - Their average is taken
+
+- `reverse_controller` function
+    - normal stanley controller is used with negative velocity output
+
+- `slope_controller` function
+    - Predictive contoller fails for slope
+    - So normal stanley contoller is used
+
+- `forward_brake_controller`, `reverse_brake_controller` function
+    - Linearly decreasing angular velocity is used
+ 
+- `stop_controller` function
+    - Stop linear_vel and steering_vel to zero
+
 

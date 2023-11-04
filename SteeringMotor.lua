@@ -89,7 +89,7 @@ function sysCall_init()
         sim.stopSimulation()
     end
 
-    -- Intializatio
+    -- Intialization
     LastTime = sim.getSimulationTime()
     CurrentTime = sim.getSimulationTime()
     DestinationSignal = "destinationSignal"     -- Signal which passes the name of destination to the manipulator
@@ -218,7 +218,7 @@ Output:
         - desired_steering_angle:
             - Type: Float
             - Desired steering angle of the steering motor
-Logic:
+    Logic:
         - Produces the desired speed of the bike in backward direcion
         - Its target is to take the FrontFollower of the bike to the destination
         - Calculates the desired angular speed according to the braking function
