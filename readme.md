@@ -113,4 +113,62 @@
 - `stop_controller` function
     - Stop linear_vel and steering_vel to zero
 
+### LUA
+- Array : 
+    ```lua
+        arr = {"asd","sadasd","dasfa"}
+    ```
+- For loop
+    ```lua
+        for i = 2 : 10 : 1
+        do
+            -- print 2 to 10
+        end
+    ```
 
+    ```lua
+        for key,value in arr
+        do
+            -- iterate over array
+        end
+    ```
+
+- While
+    ```lua
+        while( condition )
+        do
+            -- loop
+        end
+    ```
+- Repeat untill
+    ```lua
+        repeat
+        
+        until(condition)
+    ```
+- Function
+    - Here output type is not defined
+    ```lua
+        function fun(var1,var2)
+            local a
+            -- do something
+            return a
+        end
+    ```
+- Tables
+    - Dictionary
+    ```lua
+        tableA = {}
+        tableA['name'] = 'ohm'
+    ```
+- Coroutines
+    - coroutine.create(function)
+        - Create coroutine and returns variable pointing that coroutine 
+    - coroutin.resume(coroutine_var)
+        - resume coroutine
+    - coroutine.running()
+        - return if coroutine is runnning or main thread is runnnig
+    - coroutine.status (coroutine_var)
+        - Status of coroutine_var
+    - coroutine.yield (coroutine_var)
+        - Stops coroutine
